@@ -65,7 +65,7 @@ updateAceEditor <- function(
   if (!missing(tabSize)) theList["tabSize"] <- tabSize
   if (!missing(useSoftTabs)) theList["useSoftTabs"] <- useSoftTabs
   if (!missing(showInvisibles)) theList["showInvisibles"] <- showInvisibles
-  if (!missing(moveCursorToPosition)) theList["moveCursorToPosition"] <- moveCursorToPosition
+  if (!missing(moveCursorToPosition)) theList["moveCursorToPosition"] <- list(moveCursorToPosition)
 
   if (!missing(border)) {
     border <- match.arg(border)
