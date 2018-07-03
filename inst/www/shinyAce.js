@@ -78,6 +78,9 @@
     var $el = $('#' + id);
     var editor = $el.data('aceEditor');
     
+    var pos = editor.getCursorPosition()
+    
+
     if (data.theme){
       editor.setTheme("ace/theme/" + data.theme);
     }
@@ -166,6 +169,12 @@
     if (data.codeCompletions) {
       var callback = $el.data('autoCompleteCallback');
       if(callback !== undefined) callback(null, data.codeCompletions);
+    }
+    
+    if (data.moveCursorToPosition) {
+      editor.moveCursorToPosition(data.moveCursorToPosition);
+    } else {
+      editor.moveCursorToPosition(pos);
     }
   });
 
